@@ -102,6 +102,20 @@ export const getOwnWorkspace = async (id, email, slug) =>
     },
   });
 
+const buildSiteWorkspaceOr = (slug, customDomain) => [
+  slug ? { slug } : null,
+  customDomain && slug
+    ? {
+      domains: {
+        some: {
+          name: slug,
+          deletedAt: null,
+        },
+      },
+    }
+    : null,
+].filter(Boolean);
+
 export const getSiteWorkspace = async (slug, customDomain) =>
   await prisma.workspace.findFirst({
     select: {
@@ -111,20 +125,8 @@ export const getSiteWorkspace = async (slug, customDomain) =>
       domains: { select: { name: true } },
     },
     where: {
-      OR: [
-        { slug },
-        customDomain
-          ? {
-            domains: {
-              some: {
-                name: slug,
-                deletedAt: null,
-              },
-            },
-          }
-          : undefined,
-      ].filter(Boolean),
-      AND: { deletedAt: null },
+      OR: buildSiteWorkspaceOr(slug, customDomain),
+      deletedAt: null,
     },
   });
 
