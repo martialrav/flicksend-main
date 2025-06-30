@@ -146,15 +146,15 @@ export const getWorkspace = async (id, email, slug) =>
     },
     where: {
       OR: [
-        { id },
-        {
+        id ? { id } : undefined,
+        email ? {
           members: {
             some: {
               email,
               deletedAt: null,
             },
           },
-        },
+        } : undefined,
       ].filter(Boolean),
       AND: {
         deletedAt: null,
