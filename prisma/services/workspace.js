@@ -94,7 +94,7 @@ export const getOwnWorkspace = async (id, email, slug) =>
             },
           },
         },
-      ],
+      ].filter(Boolean),
       AND: {
         deletedAt: null,
         slug,
@@ -115,15 +115,15 @@ export const getSiteWorkspace = async (slug, customDomain) =>
         { slug },
         customDomain
           ? {
-              domains: {
-                some: {
-                  name: slug,
-                  deletedAt: null,
-                },
+            domains: {
+              some: {
+                name: slug,
+                deletedAt: null,
               },
-            }
+            },
+          }
           : undefined,
-      ],
+      ].filter(Boolean),
       AND: { deletedAt: null },
     },
   });
@@ -155,7 +155,7 @@ export const getWorkspace = async (id, email, slug) =>
             },
           },
         },
-      ],
+      ].filter(Boolean),
       AND: {
         deletedAt: null,
         slug,
@@ -204,7 +204,7 @@ export const getWorkspaces = async (id, email) =>
             },
           },
         },
-      ],
+      ].filter(Boolean),
       AND: { deletedAt: null },
     },
   });
