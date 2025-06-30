@@ -68,9 +68,19 @@ export const getStaticProps = async ({ params }) => {
   const { site } = params;
   const siteWorkspace = await getSiteWorkspace(site, site.includes('.'));
   let workspace = null;
+  let host = 'localhost';
+
+  try {
+    if (!process.env.APP_URL) {
+      throw new Error('APP_URL environment variable is missing');
+    }
+    host = new URL(process.env.APP_URL).host;
+  } catch (err) {
+    console.error('Error parsing APP_URL:', err);
+    throw err;
+  }
 
   if (siteWorkspace) {
-    const { host } = new URL(process.env.APP_URL);
     workspace = {
       domains: siteWorkspace.domains,
       name: siteWorkspace.name,
