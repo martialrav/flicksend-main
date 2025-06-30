@@ -31,7 +31,7 @@ export const createDomain = async (
             },
           },
         },
-      ],
+      ].filter(Boolean),
       AND: {
         deletedAt: null,
         slug,
@@ -64,7 +64,7 @@ export const deleteDomain = async (id, email, slug, name) => {
             },
           },
         },
-      ],
+      ].filter(Boolean),
       AND: {
         deletedAt: null,
         slug,
@@ -116,7 +116,7 @@ export const verifyDomain = async (id, email, slug, name, verified) => {
             },
           },
         },
-      ],
+      ].filter(Boolean),
       AND: {
         deletedAt: null,
         slug,
