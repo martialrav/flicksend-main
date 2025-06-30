@@ -1,6 +1,12 @@
-module.exports = {
+const nextConfig = {
+  reactStrictMode: true,
   images: {
     domains: [''],
   },
-  reactStrictMode: true,
+  // ✅ Make sure Next.js uses `src/pages`
+  experimental: {
+    appDir: false,
+  },
 };
+
+module.exports = nextConfig;
