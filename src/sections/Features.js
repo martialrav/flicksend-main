@@ -15,7 +15,7 @@ const Features = () => {
         </div>
         <div className="flex flex-col py-10 space-x-0 space-y-10 md:space-y-0 md:space-x-5 md:flex-row">
           <div className="flex flex-col items-center justify-start px-5 space-y-3 md:w-1/3">
-            <img
+            <Image
               src="images\3-removebg-preview.png"
               alt="Inbox Automation"
               className="w-26 h-24"
@@ -26,7 +26,7 @@ const Features = () => {
             </p>
           </div>
           <div className="flex flex-col items-center justify-start px-5 space-y-3 md:w-1/3">
-            <img
+            <Image
               src="images\2-removebg-preview.png"
               alt="Inbox Automation"
               className="w-26 h-24"
@@ -37,7 +37,7 @@ const Features = () => {
             </p>
           </div>
           <div className="flex flex-col items-center justify-start px-5 space-y-3 md:w-1/3">
-            <img
+            <Image
               src="images\1-removebg-preview.png"
               alt="Inbox Automation"
               className="w-26 h-24"
