@@ -1,3 +1,4 @@
+import Link from 'next/link';
 const CallToAction = () => {
   return (
     <div className="flex items-center justify-center w-full h-screen bg-blue-600">
