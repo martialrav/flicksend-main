@@ -11,9 +11,9 @@ const CallToAction = () => {
           </h2>
         </div>
         <div className="flex items-center justify-center">
-          <a href="/auth/login" className="px-10 py-3 text-xl text-center text-blue-600 bg-white rounded shadow hover:bg-blue-50">
+          <Link href="/auth/login" className="px-10 py-3 text-xl text-center text-blue-600 bg-white rounded shadow hover:bg-blue-50">
             Subscribe Now
-          </a>
+          </Link>
         </div>
       </div>
     </div>
