@@ -2,12 +2,11 @@ import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
   const { status: sessionStatus } = useSession();
   const [showMenu, setMenuVisibility] = useState(false);
-
   const toggleMenu = () => setMenuVisibility(!showMenu);
   const { t } = useTranslation();
 
@@ -34,9 +33,15 @@ const Hero = () => {
             ].join(' ')}
           >
             <nav className="flex flex-col w-full space-x-0 space-y-3 text-center md:space-y-0 md:space-x-3 md:flex-row">
-              <a className="px-5 py-2 rounded hover:bg-gray-100">{t("common.label.guides")}</a>
-              <a className="px-5 py-2 rounded hover:bg-gray-100">{t("common.label.pricing")}</a>
-              <a className="px-5 py-2 rounded hover:bg-gray-100">{t("common.label.blog")}</a>
+              <a className="px-5 py-2 rounded hover:bg-gray-100">
+                {t('common.label.guides')}
+              </a>
+              <a className="px-5 py-2 rounded hover:bg-gray-100">
+                {t('common.label.pricing')}
+              </a>
+              <a className="px-5 py-2 rounded hover:bg-gray-100">
+                {t('common.label.blog')}
+              </a>
             </nav>
             <Link
               href={
@@ -54,16 +59,24 @@ const Hero = () => {
             <span className="block text-blue-600">10x Faster</span>
           </h1>
           <p className="mt-5 text-center text-gray-600">
-            Flicksend auto-creates inboxes, manages your DNS, and rotates campaigns for higher deliverability — no warm-up or complex setup needed.
+            Flicksend auto-creates inboxes, manages your DNS, and rotates
+            campaigns for higher deliverability — no warm-up or complex setup
+            needed.
           </p>
-        </div>
-        <div className="flex items-center justify-center space-x-5">
-          <a href="/auth/login" className="px-10 py-3 text-center text-white bg-blue-600 rounded shadow hover:bg-blue-500">
-            Get Started
-          </a>
-          <a className="px-10 py-3 text-center text-blue-600 rounded shadow hover:bg-blue-50">
-            Live Demo
-          </a>
+          <div className="flex items-center justify-center space-x-5">
+            <Link
+              href="/auth/login"
+              className="px-10 py-3 text-center text-white bg-blue-600 rounded shadow hover:bg-blue-500"
+            >
+              Get Started
+            </Link>
+            <Link
+              href="/demo"
+              className="px-10 py-3 text-center text-blue-600 rounded shadow hover:bg-blue-50"
+            >
+              Live Demo
+            </Link>
+          </div>
         </div>
       </div>
     </div>

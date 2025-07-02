@@ -1,4 +1,5 @@
 import { CheckIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 const Pricing = () => {
   return (
@@ -10,7 +11,7 @@ const Pricing = () => {
             Choose the right plan for your workflow
           </h2>
           <p className="text-gray-600 max-w-xl mt-2">
-            Whether you're just starting or scaling outreach — Flicksend has a plan for you.
+            Whether you are just starting or scaling outreach — Flicksend has a plan for you.
           </p>
         </div>
 
@@ -22,12 +23,12 @@ const Pricing = () => {
             </span>
             <h2 className="text-5xl font-extrabold mt-4">$0</h2>
             <p className="mt-2 text-gray-500">Perfect for testing and early users</p>
-            <a
-              className="mt-6 px-8 py-3 text-center text-blue-600 bg-blue-50 rounded shadow hover:bg-blue-100 transition"
+            <Link
               href="/auth/login"
+              className="mt-6 px-8 py-3 text-center text-blue-600 bg-blue-50 rounded shadow hover:bg-blue-100 transition"
             >
               Get Started
-            </a>
+            </Link>
             <div className="mt-8">
               <h6 className="uppercase text-sm text-gray-500 mb-3">Includes</h6>
               <ul className="space-y-3">
@@ -55,12 +56,12 @@ const Pricing = () => {
             <h2 className="text-5xl font-extrabold mt-4">$30</h2>
             <p className="mt-2 text-gray-500">Everything you need to scale cold email</p>
             <p className="mt-1 text-sm text-blue-600 font-semibold">7-day free trial • No card required</p>
-            <a
-              className="mt-6 px-8 py-3 text-center text-white bg-blue-600 rounded shadow hover:bg-blue-700 transition"
+            <Link
               href="/auth/login"
+              className="mt-6 px-8 py-3 text-center text-white bg-blue-600 rounded shadow hover:bg-blue-700 transition"
             >
-              Start Free Trial
-            </a>
+              Start a free trial
+            </Link>
             <div className="mt-8">
               <h6 className="uppercase text-sm text-gray-500 mb-3">Everything in Free, plus:</h6>
               <ul className="space-y-3">

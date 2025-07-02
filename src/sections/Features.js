@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const Features = () => {
   return (
     <div className="w-full py-10">
@@ -9,16 +11,14 @@ const Features = () => {
           <h2 className="text-4xl font-bold text-center">
             <span className="block">A better way to create inboxes and launch campaigns</span>
           </h2>
-          <p className="text-center text-gray-600">
-
-          </p>
         </div>
         <div className="flex flex-col py-10 space-x-0 space-y-10 md:space-y-0 md:space-x-5 md:flex-row">
           <div className="flex flex-col items-center justify-start px-5 space-y-3 md:w-1/3">
             <Image
-              src="images\3-removebg-preview.png"
+              src="/images/3-removebg-preview.png"
               alt="Inbox Automation"
-              className="w-26 h-24"
+              width={104}
+              height={96}
             />
             <h3 className="text-lg font-bold">Inbox Automation</h3>
             <p className="text-center text-gray-400">
@@ -27,9 +27,10 @@ const Features = () => {
           </div>
           <div className="flex flex-col items-center justify-start px-5 space-y-3 md:w-1/3">
             <Image
-              src="images\2-removebg-preview.png"
-              alt="Inbox Automation"
-              className="w-26 h-24"
+              src="/images/2-removebg-preview.png"
+              alt="DNS Setup"
+              width={104}
+              height={96}
             />
             <h3 className="text-lg font-bold">DNS Setup</h3>
             <p className="text-center text-gray-400">
@@ -38,9 +39,10 @@ const Features = () => {
           </div>
           <div className="flex flex-col items-center justify-start px-5 space-y-3 md:w-1/3">
             <Image
-              src="images\1-removebg-preview.png"
-              alt="Inbox Automation"
-              className="w-26 h-24"
+              src="/images/1-removebg-preview.png"
+              alt="Smart Campaigns"
+              width={104}
+              height={96}
             />
             <h3 className="text-lg font-bold">Smart Campaigns</h3>
             <p className="text-center text-gray-400">
